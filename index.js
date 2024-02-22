@@ -10,7 +10,7 @@ const GAME_HEIGHT = 600;
 
 if (window.innerWidth <= GAME_WIDTH) {
   $canvas.width = window.innerWidth - 200;
-  $canvas.height = (window.innerWidth - 200) / 1.333333333333;
+  $canvas.height = (window.innerWidth - 200) / (GAME_WIDTH / GAME_HEIGHT);
   document.querySelector('#controls').style.width = `${
     window.innerWidth - 200
   }px`;
@@ -199,7 +199,7 @@ function initEvents() {
     } else if (key === 's') {
       leftPaddle.movingDown = true;
     }
-    // console.log(key);
+
     if (key === 'ArrowUp') {
       rightPaddle.movingUp = true;
     } else if (key === 'ArrowDown') {
@@ -263,7 +263,7 @@ $play_btn.addEventListener('click', () => {
 window.addEventListener('resize', () => {
   if (window.innerWidth <= GAME_WIDTH) {
     $canvas.width = window.innerWidth - 10;
-    $canvas.height = (window.innerWidth - 10) / 1.333333333333;
+    $canvas.height = (window.innerWidth - 10) / (GAME_WIDTH / GAME_HEIGHT);
   }
 
   if (window.innerWidth <= GAME_WIDTH) {
@@ -271,7 +271,7 @@ window.addEventListener('resize', () => {
       window.innerWidth - 200
     }px`;
     document.querySelector('#controls').style.height = `${
-      (window.innerWidth - 200) / 1.333333333333
+      (window.innerWidth - 200) / (GAME_WIDTH / GAME_HEIGHT)
     }px`;
   }
 });
