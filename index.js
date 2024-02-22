@@ -5,8 +5,19 @@ const $screen = document.querySelector('#screen');
 const $title = document.querySelector('#title');
 const $play_btn = document.querySelector('#play-btn');
 
-$canvas.width = 800;
-$canvas.height = 600;
+const GAME_WIDTH = 800;
+const GAME_HEIGHT = 600;
+
+if (window.innerWidth <= GAME_WIDTH) {
+  $canvas.width = window.innerWidth - 200;
+  $canvas.height = (window.innerWidth - 200) / 1.333333333333;
+  document.querySelector('#controls').style.width = `${
+    window.innerWidth - 200
+  }px`;
+} else {
+  $canvas.width = GAME_WIDTH;
+  $canvas.height = GAME_HEIGHT;
+}
 
 let BALL_VELOCITY = 3;
 let gameOver = false;
@@ -247,4 +258,46 @@ function play() {
 
 $play_btn.addEventListener('click', () => {
   play();
+});
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth <= GAME_WIDTH) {
+    $canvas.width = window.innerWidth - 10;
+    $canvas.height = (window.innerWidth - 10) / 1.333333333333;
+  }
+
+  if (window.innerWidth <= GAME_WIDTH) {
+    document.querySelector('#controls').style.width = `${
+      window.innerWidth - 200
+    }px`;
+    document.querySelector('#controls').style.height = `${
+      (window.innerWidth - 200) / 1.333333333333
+    }px`;
+  }
+});
+
+document.querySelector('#tl-control-btn').addEventListener('touchstart', () => {
+  leftPaddle.movingUp = true;
+});
+document.querySelector('#tr-control-btn').addEventListener('touchstart', () => {
+  rightPaddle.movingUp = true;
+});
+document.querySelector('#bl-control-btn').addEventListener('touchstart', () => {
+  leftPaddle.movingDown = true;
+});
+document.querySelector('#br-control-btn').addEventListener('touchstart', () => {
+  rightPaddle.movingDown = true;
+});
+
+document.querySelector('#tl-control-btn').addEventListener('touchend', () => {
+  leftPaddle.movingUp = false;
+});
+document.querySelector('#tr-control-btn').addEventListener('touchend', () => {
+  rightPaddle.movingUp = false;
+});
+document.querySelector('#bl-control-btn').addEventListener('touchend', () => {
+  leftPaddle.movingDown = false;
+});
+document.querySelector('#br-control-btn').addEventListener('touchend', () => {
+  rightPaddle.movingDown = false;
 });

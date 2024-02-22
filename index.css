@@ -8,22 +8,30 @@
     padding: 0;
 }
 
-html,
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+html {
+
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     width: 100%;
-    height: 100%;
+    height: 100svh;
     background-color: black;
 }
 
+body {
+    width: 100%;
+    height: 100%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 canvas {
+
     background-color: black;
     border: 4px solid white;
+
 }
 
 #screen {
@@ -40,7 +48,29 @@ canvas {
 }
 
 #title {
+    text-align: center;
     font-size: 40pt;
+}
+
+#controls {
+    display: grid;
+
+    grid-template-columns: 50% 50%;
+    position: absolute;
+    margin: 0 auto;
+    width: 800px;
+    height: 600px;
+    /* background-color: green; */
+}
+
+.control-btn {
+    background-color: transparent;
+    border: none;
+
+}
+
+.control-btn:hover {
+    /* background-color: red; */
 }
 
 #play-btn {
