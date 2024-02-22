@@ -66,12 +66,10 @@ canvas {
 .control-btn {
     background-color: transparent;
     border: none;
+    outline: none;
 
 }
 
-.control-btn:hover {
-    /* background-color: red; */
-}
 
 #play-btn {
     font-size: 14pt;
