@@ -1,0 +1,58 @@
+@font-face {
+    font-family: RetroGaming;
+    src: url(./assets/Retro\ Gaming.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+canvas {
+    background-color: black;
+    border: 4px solid white;
+}
+
+#screen {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin: 0 auto;
+    color: white;
+    font-family: RetroGaming;
+
+}
+
+#title {
+    font-size: 40pt;
+}
+
+#play-btn {
+    font-size: 14pt;
+    font-family: RetroGaming;
+    padding: 10px 20px;
+    border: 3px dashed white;
+    background-color: transparent;
+    color: white;
+}
+
+#play-btn:hover {
+    background-color: #fff2;
+    cursor: pointer;
+}
